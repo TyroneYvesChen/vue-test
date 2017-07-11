@@ -18,8 +18,15 @@
       <div class="errors" ref="passWord-errors"></div>
     </div>
     <div class="line">
+      <div class="line-details">password again</div>
+      <div class="line-input">
+        <input type="text" v-model="passWord">
+      </div>
+      <div class="errors" ref="passWord-errors"></div>
+    </div>
+    <div class="line">
       <div class="line-details">
-        <button id="loginBtn" @click="login">登录</button>
+        <button id="register" @click="register">注册</button>
       </div>
     </div>
 
@@ -36,7 +43,7 @@ export default {
     }
   },
   methods: {
-    login (){
+    register (){
       console.log(this.userName)
       if (this.userName === ""){
         this.$refs["userName-errors"].innerText = "姓名不为空"
@@ -84,7 +91,7 @@ export default {
     color: red;
     padding-left: 30px;
   }
-  #loginBtn{
+  #register{
     padding: 5px 10px;
     border-radius: 5px;
     background-color: #888;
