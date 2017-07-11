@@ -15,17 +15,21 @@
     </div>
 
 
-    <my-dialog :isShow="isShow" @on-close="closeDialog"></my-dialog>
+    <my-dialog :isShow="isShow" @on-close="closeDialog">
+      <login></login>
+    </my-dialog>
 
   </div>
 </template>
 
 <script>
   import myDialog from "./myDialog.vue"
+  import login from "./login.vue"
   export default {
     name: 'header',
     components:{
-      "my-dialog": myDialog
+      "my-dialog": myDialog,
+      login
     },
     data (){
         return {

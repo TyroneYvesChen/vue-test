@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="dialog-wrap">
+    <div class="dialog-wrap" ref="dialog-wrap">
       <div class="dialog-cover"  v-if="isShow" @click="closeDialog"></div>
       <transition name="drop">
         <div class="dialog-content"  v-if="isShow">
@@ -26,10 +26,22 @@ export default {
 
     }
   },
+  watch: {
+    isShow (newValue, oldValue){
+      if(newValue){
+        this.$refs["dialog-wrap"].style.zIndex = 10
+      }else {
+        this.$refs["dialog-wrap"].style.zIndex = 1
+      }
+    }
+  },
   methods: {
       closeDialog (){
         this.$emit('on-close')
       }
+  },
+  mounted (){
+
   }
 }
 </script>

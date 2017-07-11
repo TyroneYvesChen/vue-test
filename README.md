@@ -7,7 +7,7 @@
 ``` bash
 
 
-npm clone https://github.com/TyroneYvesChen/vue-project.git
+npm clone https://github.com/TyroneYvesChen/vue-test.git
 
 npm install
 

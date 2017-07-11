@@ -104,7 +104,7 @@
 
   #silderModel{
     position: relative;
-    margin: 15px 15px 15px 0;
+    margin: 0 auto;
     overflow: hidden;
     height: 300px;
     width: 100%;

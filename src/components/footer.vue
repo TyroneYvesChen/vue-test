@@ -1,6 +1,6 @@
 <template>
   <div class="app-foot">
-    <p>© 2016 fishenal MIT</p>
+    <p>Tyrone Yves Chen</p>
   </div>
 </template>
 
