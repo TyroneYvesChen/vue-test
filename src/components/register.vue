@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="line">
-      <div class="line-details"><span>登录</span></div>
+      <div class="line-details"><span>注册</span></div>
     </div>
     <div class="line">
       <div class="line-details">name</div>

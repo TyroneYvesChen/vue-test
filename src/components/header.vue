@@ -6,7 +6,7 @@
           <ul class="nav-list">
             <li @click="isLogin">登录</li>
             <li class="nav-pile">|</li>
-            <li >注册</li>
+            <li @click="register">注册</li>
             <li class="nav-pile">|</li>
             <li >关于</li>
           </ul>
@@ -16,7 +16,8 @@
 
 
     <my-dialog :isShow="isShow" @on-close="closeDialog">
-      <login></login>
+      <login @on-close="closeDialog" v-if="dialogType === 'login'"></login>
+      <register @on-close="closeDialog" v-if="dialogType === 'register'"></register>
     </my-dialog>
 
   </div>
@@ -25,21 +26,29 @@
 <script>
   import myDialog from "./myDialog.vue"
   import login from "./login.vue"
+  import register from "./register.vue"
   export default {
     name: 'header',
     components:{
       "my-dialog": myDialog,
-      login
+      login,
+      register
     },
     data (){
         return {
-          isShow: false
+          isShow: false,
+          dialogType: ""
         }
     },
     methods: {
-        isLogin (){
-            this.isShow = true;
-        },
+      isLogin (){
+        this.dialogType = "login"
+        this.isShow = true;
+      },
+      register (){
+        this.dialogType = "register"
+        this.isShow = true;
+      },
       closeDialog (){
         this.isShow = false;
       }
@@ -79,5 +88,8 @@
   }
   .nav-pile {
     padding: 0 10px;
+  }
+  #loginBtn{
+    background-color: red!important;
   }
 </style>
