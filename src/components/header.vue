@@ -4,9 +4,11 @@
       <div class="app-head-inner">
         <div class="head-nav">
           <ul class="nav-list">
-            <li @click="isLogin">登录</li>
+            <li @click="loginEvent" v-if="!isLogin" v-model="isLogin">登录</li>
+            <li v-if="isLogin" v-model="isLogin">Tyrone Yves Chen</li>
             <li class="nav-pile">|</li>
-            <li @click="register">注册</li>
+            <li @click="register" v-if="!isLogin" v-model="isLogin">注册</li>
+            <li v-if="isLogin" v-model="isLogin" @click="logoutEvent">退出</li>
             <li class="nav-pile">|</li>
             <li >关于</li>
           </ul>
@@ -16,7 +18,7 @@
 
 
     <my-dialog :isShow="isShow" @on-close="closeDialog">
-      <login @on-close="closeDialog" v-if="dialogType === 'login'"></login>
+      <login @on-close="isLoginEvent" v-if="dialogType === 'login'"></login>
       <register @on-close="closeDialog" v-if="dialogType === 'register'"></register>
     </my-dialog>
 
@@ -37,17 +39,25 @@
     data (){
         return {
           isShow: false,
-          dialogType: ""
+          dialogType: "",
+          isLogin: false
         }
     },
     methods: {
-      isLogin (){
+      loginEvent (){
         this.dialogType = "login"
         this.isShow = true;
+      },
+      logoutEvent (){
+        this.isLogin = false
       },
       register (){
         this.dialogType = "register"
         this.isShow = true;
+      },
+      isLoginEvent (){
+        this.isLogin = true
+        this.closeDialog()
       },
       closeDialog (){
         this.isShow = false;
