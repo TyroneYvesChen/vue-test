@@ -20,9 +20,9 @@
     <div class="line">
       <div class="line-details">password again</div>
       <div class="line-input">
-        <input type="text" v-model="passWord">
+        <input type="text" v-model="passWordAgain">
       </div>
-      <div class="errors" ref="passWord-errors"></div>
+      <div class="errors" ref="passWordAgain-errors"></div>
     </div>
     <div class="line">
       <div class="line-details">
@@ -39,26 +39,31 @@ export default {
   data (){
     return {
       userName: "",
-      passWord: ""
+      passWord: "",
+      passWordAgain: ""
     }
   },
   methods: {
     register (){
       console.log(this.userName)
       if (this.userName === ""){
-        this.$refs["userName-errors"].innerText = "姓名不为空"
+        this.$refs["userName-errors"].innerText = "姓名不为空！"
         return
       }else {
         this.$refs["userName-errors"].innerText = ""
       }
 
       if (this.passWord.length < 8){
-        this.$refs["passWord-errors"].innerText = "密码长度小于8"
+        this.$refs["passWord-errors"].innerText = "密码长度小于8！"
         return
       }else {
         this.$refs["passWord-errors"].innerText = ""
       }
-      alert("登录成功")
+      if (this.passWordAgain !== this.passWord){
+        this.$refs["passWordAgain-errors"].innerText = "两次密码不一致！"
+        return
+      }
+      alert("注册成功")
       this.$emit("on-close")
     }
   }

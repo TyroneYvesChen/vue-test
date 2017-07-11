@@ -39,14 +39,14 @@ export default {
     login (){
       console.log(this.userName)
       if (this.userName === ""){
-        this.$refs["userName-errors"].innerText = "姓名不为空"
+        this.$refs["userName-errors"].innerText = "姓名不为空！"
         return
       }else {
         this.$refs["userName-errors"].innerText = ""
       }
 
       if (this.passWord.length < 8){
-        this.$refs["passWord-errors"].innerText = "密码长度小于8"
+        this.$refs["passWord-errors"].innerText = "密码长度小于8！"
         return
       }else {
         this.$refs["passWord-errors"].innerText = ""
