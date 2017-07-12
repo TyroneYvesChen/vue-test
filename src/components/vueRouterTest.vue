@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     routerPush (){
-      this.$router.push("/vueRouterTest/son")
+      this.$router.push({ path: "/vueRouterTest/son", query: { userId: 123 }})
     },
     routerGo (){
       this.$router.go(-1)
