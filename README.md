@@ -1,7 +1,7 @@
-# vue-project
+# vue-test
 
 > A Vue.js project
-
+## 自己写写的小demo
 ## Build Setup
 
 ``` bash
