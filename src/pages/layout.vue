@@ -6,9 +6,13 @@
                   @silderIndex="getSilderIndex"></silder-model>
 
     <div class="container">
-      <!--<keep-alive>
+      <div class="router-wrap">
+        <router-link to="/">hello</router-link>
+        <router-link to="/vueRouterTest">vueRouterTest</router-link>
+      </div>
+      <keep-alive>
         <router-view></router-view>
-      </keep-alive>-->
+      </keep-alive>
     </div>
 
 
@@ -59,11 +63,24 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
   .container {
     width: 1200px;
     height: 100vh;
     margin: 0 auto;
   }
-
+  .router-wrap{
+    padding: 20px;
+    text-align: center;
+  }
+  .router-wrap a{
+    padding: 5px 10px;
+    margin: 0 10px;
+    border: 1px dashed #ccc;
+    box-shadow: 1px 1px 5px 2px #ccc;
+  }
+  .router-wrap a:active,
+  .router-wrap a.router-link-exact-active{
+    box-shadow: 1px 1px 5px 2px #ccc inset;
+  }
 </style>

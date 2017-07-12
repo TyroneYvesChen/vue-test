@@ -31,7 +31,7 @@ export default {
       if(newValue){
         this.$refs["dialog-wrap"].style.zIndex = 10
       }else {
-        this.$refs["dialog-wrap"].style.zIndex = 1
+        this.$refs["dialog-wrap"].style.zIndex = -1
       }
     }
   },
@@ -63,7 +63,7 @@ export default {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: -1;
   }
   .dialog-cover {
     background: #000;
