@@ -4,6 +4,7 @@
     <div class="router-wrap">
       <router-link to="/vueRouterTest/son">儿子</router-link>
       <router-link to="/vueRouterTest/daughter">女儿</router-link>
+
     </div>
     <div class="router-wrap">
       <div>router.push/go/replace</div>
@@ -13,9 +14,11 @@
         <li @click="routerReplace">router.replace</li>
       </ul>
     </div>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
+    <transition name="routerClidren">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
@@ -44,6 +47,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .routerClidren-enter-active {
+    transition: all .5s ease;
+  }
+  .routerClidren-leave-active {
+    transition: all .3s ease;
+    transform: translate(500px,500px);
+  }
+  .routerClidren-enter {
+    transform: translate(-500px,200px);
+  }
+
+
+
   .routerList li{
     padding: 5px 10px;
     display: inline-block;
