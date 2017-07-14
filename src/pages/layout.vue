@@ -8,6 +8,7 @@
     <div class="container">
       <div class="router-wrap">
         <router-link to="/">hello</router-link>
+        <router-link to="/componentsLayout">部分组件</router-link>
         <router-link to="/vueRouterTest">vueRouterTest</router-link>
       </div>
       <keep-alive>

@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import vueRouterTest from '@/components/vueRouterTest'
 import vueRouterChildren1 from '@/components/vueRouterChildren1'
 import vueRouterChildren2 from '@/components/vueRouterChildren2'
+import componentsLayout from '@/pages/componentsLayout'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
           component: vueRouterChildren2
         }
       ]
+    },
+    {
+      path: '/componentsLayout',
+      name: 'componentsLayout',
+      component: componentsLayout
     }
   ]
 })
