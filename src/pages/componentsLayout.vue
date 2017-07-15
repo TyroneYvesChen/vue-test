@@ -4,15 +4,25 @@
     <single-selection :selections="singleSelection"
     @on-change="chooseOneEvent"></single-selection>
     <div class="componentsValue">选中了：{{chooseOneReturn}}</div>
+
+    <div class="title">checkbox 多选</div>
+    <checkbox :checkboxData="checkboxData"
+              @on-change="chooseMoreEvent"></checkbox>
+    <div>
+      <div class="componentsValue"
+           v-for="item in chooseMoreReturn">选中了：{{item.label}}</div>
+    </div>
   </div>
 </template>
 
 <script>
   import singleSelection from "../components/details/singleSelection.vue"
+  import checkbox from "../components/details/checkbox.vue"
 export default {
   name: 'componentsLayout',
   components:{
-    singleSelection
+    singleSelection,
+    checkbox
   },
   data (){
       return {
@@ -30,13 +40,31 @@ export default {
             value: 2
           }
         ],
-        chooseOneReturn: ""
+        checkboxData: [
+          {
+            label: 'KG',
+            value: 0
+          },
+          {
+            label: 'T-mac',
+            value: 1
+          },
+          {
+            label: 'FK',
+            value: 2
+          }
+        ],
+        chooseOneReturn: "",
+        chooseMoreReturn: []
       }
   },
   methods: {
     chooseOneEvent (data){
       console.log(data)
       this.chooseOneReturn = data.label
+    },
+    chooseMoreEvent (data){
+      this.chooseMoreReturn = data
     }
   }
 }
