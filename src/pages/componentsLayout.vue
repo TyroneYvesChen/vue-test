@@ -12,17 +12,22 @@
       <div class="componentsValue"
            v-for="item in chooseMoreReturn">选中了：{{item.label}}</div>
     </div>
+
+    <div class="title">counter 计数</div>
+    <counter @on-change="counterEvent"></counter>
   </div>
 </template>
 
 <script>
   import singleSelection from "../components/details/singleSelection.vue"
   import checkbox from "../components/details/checkbox.vue"
+  import counter from "../components/details/counter.vue"
 export default {
   name: 'componentsLayout',
   components:{
     singleSelection,
-    checkbox
+    checkbox,
+    counter
   },
   data (){
       return {
@@ -65,6 +70,9 @@ export default {
     },
     chooseMoreEvent (data){
       this.chooseMoreReturn = data
+    },
+    counterEvent (data){
+        console.log(data)
     }
   }
 }
