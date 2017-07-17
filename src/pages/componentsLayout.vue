@@ -14,7 +14,7 @@
     </div>
 
     <div class="title">counter 计数</div>
-    <counter @on-change="counterEvent"></counter>
+    <counter @on-change="counterEvent" :max=20 :min=0></counter>
   </div>
 </template>
 
